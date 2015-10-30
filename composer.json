@@ -7,6 +7,7 @@
     "psr-0": { "": "src/" }
   },
   "require": {
-    "hauptmedia/rdkafka-lib": "dev-master"
+    "hauptmedia/rdkafka-lib": "dev-master",
+    "sensio/generator-bundle": "^2.5"
   }
 }
