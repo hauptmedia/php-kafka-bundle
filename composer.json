@@ -1,0 +1,12 @@
+{
+  "name": "hauptmedia/php-kafka-bundle",
+  "type": "library",
+  "homepage": "https://github.com/hauptmedia/php-kafka-bundle",
+  "license": "MIT",
+  "autoload": {
+    "psr-0": { "": "src/" }
+  },
+  "require": {
+    "hauptmedia/rdkafka-lib": "dev-master"
+  }
+}
