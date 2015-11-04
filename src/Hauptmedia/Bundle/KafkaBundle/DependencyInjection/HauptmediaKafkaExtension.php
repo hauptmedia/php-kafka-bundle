@@ -24,5 +24,15 @@ class HauptmediaKafkaExtension extends Extension
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
+
+        $def = $container->getDefinition('hauptmedia.kafka');
+
+        if (!array_key_exists('topics', $config) || !is_array($config['topics'])) {
+            return;
+        }
+
+        foreach ($config['topics'] as $name => $conf) {
+            $def->addMethodCall('addTopic', array($name, $conf));
+        }
     }
 }
