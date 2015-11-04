@@ -1,4 +1,6 @@
 <?php
+namespace Hauptmedia\Bundle\KafkaBundle\Consumer;
+
 interface ConsumerInterface
 {
     /**
