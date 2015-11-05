@@ -1,2 +1,5 @@
+composer.lock
+web/
+app/
 vendor/
 .idea/
