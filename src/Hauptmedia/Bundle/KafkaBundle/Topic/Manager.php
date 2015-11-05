@@ -1,12 +1,21 @@
 <?php
 namespace Hauptmedia\Bundle\KafkaBundle\Topic;
 
+use Hauptmedia\Bundle\KafkaBundle\Consumer\ConsumerInterface;
+
 class Manager {
-    protected $topics;
+    protected $topics = array();
 
     public function __construct()
     {
-        $this->topics = [];
+    }
+
+    public function addTopicConsumer($name, ConsumerInterface $consumer) {
+        if(!array_key_exists($name, $this->topics)) {
+            throw new \Exception("Unknown Topic ".$name);
+        }
+
+        $this->topics[$name]->addConsumer($consumer);
     }
 
     public function addTopic($name, array $conf)
