@@ -69,10 +69,8 @@ class Topic {
         $this->rdKafkaProducerTopic->produce($partition, 0, $payload, $key);
     }
 
-    public function consume($partition=Topic::PARTITION_UA)
+    public function consume($partition)
     {
-        $partition=0;
-
         if(!$this->consumers) {
             throw new \Exception("Topic ".$this->name." has no registered consumers");
         }
