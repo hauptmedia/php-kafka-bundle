@@ -7,9 +7,9 @@ interface ConsumerInterface
      * @param $topic Topic name
      * @param $partition Partition
      * @param $offset Message offset
-     * @param $payload Message payload
      * @param $key Optional message key
+     * @param $payload Message payload
      * @return mixed
      */
-    public function consume($topic, $partition, $offset, $payload, $key);
+    public function consume($topic, $partition, $offset, $key, $payload);
 }
