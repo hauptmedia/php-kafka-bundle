@@ -4,14 +4,8 @@ namespace Hauptmedia\Bundle\KafkaBundle\Consumer;
 use Symfony\Component\Console\Output\OutputInterface;
 
 class OutputConsumer implements ConsumerInterface {
-    /**
-     * @var OutputInterface
-     */
-    protected $output;
-
-    public function __construct(OutputInterface $output)
+    public function __construct()
     {
-        $this->output = $output;
     }
 
     /**
@@ -24,8 +18,6 @@ class OutputConsumer implements ConsumerInterface {
      */
     public function consume($topic, $partition, $offset, $key, $payload)
     {
-        $this->output->writeln(
-            implode(":", array($topic, $partition, $offset, $key, $payload))
-        );
+        echo implode(":", array($topic, $partition, $offset, $key, $payload)).PHP_EOL;
     }
 }

@@ -42,7 +42,7 @@ class ConsumeTopicCommand extends ContainerAwareCommand
         }
 
         //TODO: register consumers via configuration
-        $topic->addConsumer(new OutputConsumer($output));
+        $topic->addConsumer(new OutputConsumer());
         $topic->consume($partition);
     }
 }
