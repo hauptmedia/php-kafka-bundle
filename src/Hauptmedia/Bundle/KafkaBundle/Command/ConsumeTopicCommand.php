@@ -41,8 +41,6 @@ class ConsumeTopicCommand extends ContainerAwareCommand
             throw new \Exception("Partition needs to be a number in the range 0..2^32-1");
         }
 
-        //TODO: register consumers via configuration
-        $topic->addConsumer(new OutputConsumer());
         $topic->consume($partition);
     }
 }
