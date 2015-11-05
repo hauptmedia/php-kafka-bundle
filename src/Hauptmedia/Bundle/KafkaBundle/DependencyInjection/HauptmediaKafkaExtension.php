@@ -4,6 +4,7 @@ namespace Hauptmedia\Bundle\KafkaBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
 
@@ -33,6 +34,12 @@ class HauptmediaKafkaExtension extends Extension
 
         foreach ($config['topics'] as $name => $conf) {
             $def->addMethodCall('addTopic', array($name, $conf));
+
+            if (array_key_exists('consumer_services', $conf)) {
+                foreach ($conf['consumer_services'] as $service) {
+                    $def->addMethodCall('addTopicConsumer', array($name, new Reference($service)));
+                }
+            }
         }
     }
 }
