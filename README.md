@@ -32,10 +32,18 @@ public function registerBundles()
 ```yaml
 # app/config.yml
 
+services:
+  output_consumer_service:
+    class: Hauptmedia\Bundle\KafkaBundle\Consumer\OutputConsumer
+    
 hauptmedia_kafka:
   topics:
     test:
       brokers:
         - hostname1
         - hostname2
+        
+      consumer_services:
+        - output_consumer_service
 ```
+        
