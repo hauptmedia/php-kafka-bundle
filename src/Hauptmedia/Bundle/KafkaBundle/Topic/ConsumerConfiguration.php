@@ -67,10 +67,6 @@ class ConsumerConfiguration
      */
     protected $consumeCallbackMaxMessages = 0;
 
-    public function __construct() {
-
-    }
-
     /**
      * @return int
      */
