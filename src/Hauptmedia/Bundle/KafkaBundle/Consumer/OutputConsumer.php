@@ -1,12 +1,7 @@
 <?php
 namespace Hauptmedia\Bundle\KafkaBundle\Consumer;
 
-use Symfony\Component\Console\Output\OutputInterface;
-
 class OutputConsumer implements ConsumerInterface {
-    public function __construct()
-    {
-    }
 
     /**
      * @param $topic Topic name

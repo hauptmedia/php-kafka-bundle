@@ -6,10 +6,6 @@ use Hauptmedia\Bundle\KafkaBundle\Consumer\ConsumerInterface;
 class Manager {
     protected $topics = array();
 
-    public function __construct()
-    {
-    }
-
     public function addTopicConsumer($name, ConsumerInterface $consumer) {
         if(!array_key_exists($name, $this->topics)) {
             throw new \Exception("Unknown Topic ".$name);

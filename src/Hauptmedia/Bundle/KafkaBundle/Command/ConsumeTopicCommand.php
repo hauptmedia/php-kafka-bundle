@@ -1,8 +1,7 @@
 <?php
 namespace Hauptmedia\Bundle\KafkaBundle\Command;
 
-use Hauptmedia\Bundle\KafkaBundle\Consumer\OutputConsumer;
-use Hauptmedia\Bundle\KafkaBundle\Topic\Topic;
+
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;

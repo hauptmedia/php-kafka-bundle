@@ -20,7 +20,7 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('hauptmedia_kafka');
 
-        $node = $rootNode
+        $rootNode
             ->children()
                 ->arrayNode('topics')
                     ->useAttributeAsKey('name')
