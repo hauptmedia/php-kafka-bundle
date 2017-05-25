@@ -2,17 +2,13 @@
 
 ## Installation
 
-### Add the dependency in your composer.json
+### Step 1: Download Kafka-Bundle using composer
 
-```js
-{
-    "require": {
-        "hauptmedia/kafka-bundle": "dev-master"
-    }
-}
+``` bash
+$ composer require hauptmedia/kafka-bundle
 ```
 
-### Enable the bundle in your application kernel
+### Step 2: Enable the bundle in your application kernel
 
 ``` php
 <?php
@@ -27,7 +23,7 @@ public function registerBundles()
 }
 ```
 
-## Configuration
+### Step 3: Setting Configuration
 
 ```yaml
 # app/config.yml
@@ -46,4 +42,6 @@ hauptmedia_kafka:
       consumer_services:
         - output_consumer_service
 ```
+
+### Step 4: Enjoy!!!
         
